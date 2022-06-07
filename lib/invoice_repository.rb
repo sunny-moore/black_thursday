@@ -42,8 +42,8 @@ class InvoiceRepository
       :customer_id => id,
       :merchant_id => data_hash[:merchant_id],
       :status => data_hash[:status],
-      :created_at => data_hash[:created_at],
-      :updated_at => data_hash[:updated_at]
+      :created_at => Time.now,
+      :updated_at => Time.now
       })
   end
 

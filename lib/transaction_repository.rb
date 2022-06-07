@@ -40,10 +40,13 @@ class TransactionRepository
   def create(data_hash)
     id = (@all.last.id.to_i + 1)
     @all << Transaction.new({
-      :id => id, :invoice_id => data_hash[:invoice_id],
+      :id => id,
+      :invoice_id => data_hash[:invoice_id],
       :credit_card_number => data_hash[:credit_card_number],
-      :credit_card_expiration_date => data_hash[:credit_card_expiration_date], :result => data_hash[:result],
-      :created_at => data_hash[:created_at], :updated_at => data_hash[:updated_at]
+      :credit_card_expiration_date => data_hash[:credit_card_expiration_date],
+      :result => data_hash[:result],
+      :created_at => Time.now,
+      :updated_at => Time.now
     })
   end
 

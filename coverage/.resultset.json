@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/customer_repository_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/customer_repository_spec.rb": {
         "lines": [
           1,
           1,
@@ -41,9 +41,9 @@
           null,
           1,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -61,7 +61,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/customer.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/customer.rb": {
         "lines": [
           1,
           1,
@@ -78,17 +78,13 @@
           32002,
           32002,
           32002,
-          32000,
-          null,
-          null,
-          null,
-          null,
+          32002,
           null,
           null,
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/customer_repository.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/customer_repository.rb": {
         "lines": [
           1,
           1,
@@ -150,7 +146,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/customer_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/customer_spec.rb": {
         "lines": [
           1,
           1,
@@ -168,17 +164,17 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/invoice_item_repository_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/invoice_item_repository_spec.rb": {
         "lines": [
           1,
           1,
@@ -224,9 +220,9 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -253,7 +249,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/invoice_item.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/invoice_item.rb": {
         "lines": [
           1,
           1,
@@ -273,16 +269,16 @@
           698563,
           698563,
           698563,
-          698560,
+          698563,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/invoice_item_repository.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/invoice_item_repository.rb": {
         "lines": [
           1,
           1,
@@ -327,7 +323,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/invoice_item_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/invoice_item_spec.rb": {
         "lines": [
           1,
           1,
@@ -348,23 +344,23 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/invoice_repository_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/invoice_repository_spec.rb": {
         "lines": [
           1,
           1,
@@ -432,7 +428,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/invoice.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/invoice.rb": {
         "lines": [
           1,
           1,
@@ -456,7 +452,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/invoice_repository.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/invoice_repository.rb": {
         "lines": [
           1,
           1,
@@ -518,7 +514,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/invoice_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/invoice_spec.rb": {
         "lines": [
           1,
           null,
@@ -546,7 +542,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/item_repository_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/item_repository_spec.rb": {
         "lines": [
           1,
           1,
@@ -629,7 +625,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/item.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/item.rb": {
         "lines": [
           1,
           1,
@@ -658,7 +654,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/sales_engine.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/sales_engine.rb": {
         "lines": [
           1,
           1,
@@ -685,7 +681,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/item_repository.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/item_repository.rb": {
         "lines": [
           1,
           1,
@@ -766,7 +762,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/item_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/item_spec.rb": {
         "lines": [
           1,
           1,
@@ -803,7 +799,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/merchant_repository_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/merchant_repository_spec.rb": {
         "lines": [
           1,
           1,
@@ -863,7 +859,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/merchant_repository.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/merchant_repository.rb": {
         "lines": [
           1,
           1,
@@ -917,7 +913,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/merchant.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/merchant.rb": {
         "lines": [
           1,
           1,
@@ -929,7 +925,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/merchant_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/merchant_spec.rb": {
         "lines": [
           1,
           1,
@@ -946,7 +942,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/sales_analyst_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/sales_analyst_spec.rb": {
         "lines": [
           1,
           1,
@@ -1058,7 +1054,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/sales_analyst.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/sales_analyst.rb": {
         "lines": [
           1,
           1,
@@ -1218,7 +1214,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/sales_engine_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/sales_engine_spec.rb": {
         "lines": [
           1,
           1,
@@ -1264,7 +1260,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/transaction_repository_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/transaction_repository_spec.rb": {
         "lines": [
           1,
           1,
@@ -1314,8 +1310,8 @@
           1,
           1,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           1,
@@ -1335,7 +1331,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/transaction.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/transaction.rb": {
         "lines": [
           1,
           1,
@@ -1356,13 +1352,13 @@
           44867,
           44867,
           44867,
-          44865,
+          44867,
           null,
           null,
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/lib/transaction_repository.rb": {
+      "/Users/wesleymiranda/github/black_thursday/lib/transaction_repository.rb": {
         "lines": [
           1,
           1,
@@ -1413,6 +1409,9 @@
           null,
           null,
           null,
+          null,
+          null,
+          null,
           1,
           1,
           1,
@@ -1426,7 +1425,7 @@
           null
         ]
       },
-      "/Users/sunnymoore/turing/1module/projects/black_thursday/spec/transaction_spec.rb": {
+      "/Users/wesleymiranda/github/black_thursday/spec/transaction_spec.rb": {
         "lines": [
           1,
           1,
@@ -1448,20 +1447,20 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1654582497
+    "timestamp": 1654640581
   }
 }
