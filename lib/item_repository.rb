@@ -44,12 +44,12 @@ class ItemRepository
                       :name => data_hash[:name],
                       :description => data_hash[:description],
                       :unit_price => data_hash[:unit_price],
-                      :created_at => Time.now.to_s,
-                      :updated_at => Time.now.to_s,
+                      :created_at => Time.now,
+                      :updated_at => Time.now,
                       :merchant_id => data_hash[:merchant_id]
                       })
   end
-  
+
   def update(id, attributes)
     find_by_id(id).name = attributes[:name]
     find_by_id(id).description = attributes[:description]

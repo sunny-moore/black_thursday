@@ -15,9 +15,9 @@ class InvoiceItem
     @item_id = data_hash[:item_id]
     @invoice_id = data_hash[:invoice_id].to_i
     @quantity = data_hash[:quantity].to_i
-    @unit_price = BigDecimal(data_hash[:unit_price].to_f / 100,4)
-    @created_at = Time.parse(data_hash[:created_at])
-    @updated_at = Time.parse(data_hash[:updated_at])
+    @unit_price = BigDecimal(data_hash[:unit_price].to_f,4)
+    @created_at = (data_hash[:created_at])
+    @updated_at = (data_hash[:updated_at])
   end
 
   def unit_price_to_dollars

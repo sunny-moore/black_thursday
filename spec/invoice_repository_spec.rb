@@ -56,7 +56,7 @@ RSpec.describe InvoiceRepository do
     expect(@invoice_repository.all.length).to eq(4986)
     expect(@invoice_repository.all.last.customer_id).to eq(7)
     expect(@invoice_repository.all.last.merchant_id).to eq(8)
-    expect(@invoice_repository.all.last.status).to eq(:pending)
+    expect(@invoice_repository.all.last.status).to eq("pending")
   end
 
   it "can can update invoice instances with new status and time " do

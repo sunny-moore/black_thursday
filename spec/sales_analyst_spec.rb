@@ -111,16 +111,16 @@ RSpec.describe SalesAnalyst do
    end
 
    it "can return the percentage of invoices shipped/pending/returned" do
-     expect(@sales_analyst.invoice_status(:pending)).to eq(29.55)
-     expect(@sales_analyst.invoice_status(:shipped)).to eq(56.95)
-     expect(@sales_analyst.invoice_status(:returned)).to eq(13.5)
+     expect(@sales_analyst.invoice_status("pending")).to eq(29.55)
+     expect(@sales_analyst.invoice_status("shipped")).to eq(56.95)
+     expect(@sales_analyst.invoice_status("returned")).to eq(13.5)
    end
 
    it "can return true if invoice with ID was paid in full" do
      expect(@sales_analyst.invoice_paid_in_full?(4126)).to eq(true)
      expect(@sales_analyst.invoice_paid_in_full?(1840)).to eq(false)
    end
-   
+
    it "can return the total $ amt of invoice with ID" do
      expect(@sales_analyst.invoice_total(4)).to eq(1963.90)
    end

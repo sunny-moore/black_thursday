@@ -172,11 +172,11 @@ class SalesAnalyst
     transactions.map  { |t| status << t.result }
     status.include?('success')
   end
-  
+
   def invoice_total(id)
     inv_items = @invoice_item_repository.find_all_by_invoice_id(id)
     total = 0
-    inv_items.map { |item| total += item.quantity * item.unit_price }
-    total.to_f
+    inv_items.map { |item| total += item.quantity * item.unit_price}
+    (total.to_f)/100
   end
 end
