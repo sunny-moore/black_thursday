@@ -1,4 +1,6 @@
 require 'csv'
+require 'time'
+require 'pry'
 require_relative '../lib/invoice'
 require_relative 'repoable'
 
@@ -17,12 +19,11 @@ class InvoiceRepository
         :customer_id => row[:customer_id],
         :merchant_id => row[:merchant_id],
         :status => row[:status],
-        :created_at => row[:created_at],
-        :updated_at => row[:updated_at]
+        :created_at => Time.parse(row[:created_at]),
+        :updated_at => Time.parse(row[:updated_at])
         })
     end
   end
-
   def find_all_by_customer_id(cust_id)
     @all.find_all {|invoice| invoice.customer_id.to_i == cust_id}
   end
@@ -33,17 +34,18 @@ class InvoiceRepository
 
   def create(data_hash)
     id = (@all.last.id.to_i + 1)
-    @all << Invoice.new({
-      :customer_id => id,
+    @all <<  Invoice.new({
+      :id => id,
+      :customer_id => data_hash[:customer_id],
       :merchant_id => data_hash[:merchant_id],
       :status => data_hash[:status],
-      :created_at => data_hash[:created_at],
-      :updated_at => data_hash[:updated_at]
+      :created_at => Time.now,
+      :updated_at => Time.now
       })
   end
 
   def update(id, status)
-    find_by_id(id).status = status
+    find_by_id(id).status = status[:status]
     find_by_id(id).updated_at = Time.now
   end
 
