@@ -1,4 +1,5 @@
 require 'CSV'
+require 'pry'
 require_relative '../lib/item'
 require_relative 'repoable'
 
@@ -12,10 +13,6 @@ class ItemRepository
     CSV.foreach(file_path, headers: true, header_converters: :symbol) do |row|
       @all << Item.new({:id => row[:id], :name => row[:name], :description => row[:description], :unit_price => row[:unit_price], :created_at => row[:created_at], :updated_at => row[:updated_at], :merchant_id => row[:merchant_id]})
     end
-  end
-
-  def inspect
-    "#<#{self.class} #{@all.size} rows>"
   end
 
   def find_all_with_description(item_description)
@@ -39,21 +36,23 @@ class ItemRepository
   end
 
   def create(data_hash)
-    id = (@all.last.id. + 1)
-    @all << Item.new({:id => id,
-                      :name => data_hash[:name],
-                      :description => data_hash[:description],
-                      :unit_price => data_hash[:unit_price],
-                      :created_at => Time.now.to_s,
-                      :updated_at => Time.now.to_s,
-                      :merchant_id => data_hash[:merchant_id]
-                      })
+    id = (@all.last.id + 1)
+    @all << Item.new({
+      :id => id,
+      :name => data_hash[:name],
+      :description => data_hash[:description],
+      :unit_price => data_hash[:unit_price],
+      :created_at => Time.now.to_s,
+      :updated_at => Time.now.to_s,
+      :merchant_id => data_hash[:merchant_id]
+      })
   end
-  
+
   def update(id, attributes)
     find_by_id(id).name = attributes[:name]
     find_by_id(id).description = attributes[:description]
-    find_by_id(id).unit_price = BigDecimal(attributes[:unit_price])
+    find_by_id(id).unit_price = attributes[:unit_price]
     find_by_id(id).updated_at = Time.now
+    binding.pry
   end
 end

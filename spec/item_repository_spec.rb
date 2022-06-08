@@ -62,12 +62,12 @@ RSpec.describe ItemRepository do
 
   it "can create a new instance of item and add to repo" do
     attributes = {
-        name: "Capita Defenders of Awesome 2018",
-        description: "This board both rips and shreds",
-        unit_price: BigDecimal(399.99, 5),
-        created_at: Time.now,
-        updated_at: Time.now,
-        merchant_id: 25
+        :name => "Capita Defenders of Awesome 2018",
+        :description => "This board both rips and shreds",
+        :unit_price => BigDecimal(399.99, 5),
+        :created_at => Time.now,
+        :updated_at => Time.now,
+        :merchant_id => 25
       }
     @item_repository.create(attributes)
     expect(@item_repository.all.last).to be_a Item
@@ -80,12 +80,23 @@ RSpec.describe ItemRepository do
   end
 
   it "can can update item instances " do
-    attributes = {:name => "Book", :description => "Read this!", :unit_price => 1500}
-    @item_repository.update(263395237, attributes)
-    expect(@item_repository.find_by_id(263395237).name).to eq("Book")
-    expect(@item_repository.find_by_id(263395237).description).to eq("Read this!")
-    expect(@item_repository.find_by_id(263395237).unit_price).to be_a BigDecimal
-    expect(@item_repository.find_by_id(263395237).updated_at).to be_a Time
+    attributes = {
+        :name => "Capita Defenders of Awesome 2018",
+        :description => "This board both rips and shreds",
+        :unit_price => BigDecimal(399.99, 5),
+        :created_at => Time.now,
+        :updated_at => Time.now,
+        :merchant_id => 25
+      }
+    @item_repository.create(attributes)
+    new_attribs = {
+        unit_price: BigDecimal(379.99, 5)
+      }
+    @item_repository.update(263567475, new_attribs)
+    expect(@item_repository.find_by_id(263567475).name).to eq("Capita Defenders of Awesome 2018")
+    expect(@item_repository.find_by_id(263567475).description).to eq("This board both rips and shreds")
+    expect(@item_repository.find_by_id(263567475).unit_price).to eq(BigDecimal(379.99, 5))
+    expect(@item_repository.find_by_id(263567475).updated_at).to be_a Time
   end
 
   it "can find an item by name and return nil if not found" do

@@ -1,5 +1,5 @@
 require 'bigdecimal'
-require './lib/item_repository'
+require 'pry'
 
 class SalesAnalyst
   attr_reader :item_repository,
@@ -172,7 +172,7 @@ class SalesAnalyst
     transactions.map  { |t| status << t.result }
     status.include?('success')
   end
-  
+
   def invoice_total(id)
     inv_items = @invoice_item_repository.find_all_by_invoice_id(id)
     total = 0
