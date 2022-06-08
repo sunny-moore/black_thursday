@@ -5,7 +5,11 @@ require_relative 'repoable'
 class CustomerRepository
   include Repoable
   attr_reader :file_path
-  attr_accessor :all, :first_name, :last_name
+
+  attr_accessor :all,
+                :first_name,
+                :last_name
+
   def initialize(file_path)
     @file_path = file_path
     @all = []
@@ -16,9 +20,9 @@ class CustomerRepository
         :last_name => row[:last_name],
         :created_at => row[:created_at],
         :updated_at => row[:updated_at]
-        })
-      end
-   end
+      })
+    end
+  end
 
    def find_all_by_first_name(name)
      @all.find_all { |customer| customer.first_name.downcase.include?(name.downcase)}
@@ -40,8 +44,16 @@ class CustomerRepository
    end
 
    def update(id, attribute)
-        find_by_id(id).first_name = attribute[:first_name]
-        find_by_id(id).last_name = attribute[:last_name]
-        find_by_id(id).updated_at = Time.now
+    find_by_id(id).first_name = attribute[:first_name]
+    find_by_id(id).last_name = attribute[:last_name]
+    find_by_id(id).updated_at = Time.now
+   end
+
+   def delete(id)
+     @all.delete(find_by_id(id))
+   end
+
+   def inspect
+     "#<#{self.class} #{@all.size} rows>"
    end
 end

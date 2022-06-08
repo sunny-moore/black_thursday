@@ -1,5 +1,5 @@
 require 'bigdecimal'
-require 'pry'
+require './lib/item_repository'
 
 class SalesAnalyst
   attr_reader :item_repository,
@@ -46,13 +46,13 @@ class SalesAnalyst
     end
     merchant_items
   end
-  #The average of one merchant's prices
+
   def average_item_price_for_merchant(id)
     merchant_items = @item_repository.find_all_by_merchant_id(id)
     price_sum = merchant_items.sum(0.0) {|item| item.unit_price}
     (price_sum / merchant_items.count).round(2)
   end
-  #The average price per item across all merchants
+
   def average_average_price_per_merchant
     merchant_averages =[]
     @merchant_repository.all.each do |merchant|
@@ -60,13 +60,14 @@ class SalesAnalyst
     end
     (merchant_averages.sum(0.0) / merchant_averages.count).round(2)
   end
+
   def average_price_per_merchant_standard_deviation
     mean = average_average_price_per_merchant
     sum = price_averages_per_merchant.values.sum(0.0) {|price| (price - mean) ** 2}
     variance = (sum / (price_averages_per_merchant.size - 1)).to_f
     standard_deviation = Math.sqrt(variance).round(2)
   end
-  #hash holding each merchant's average price/item
+
   def price_averages_per_merchant
     merchant_price_averages = Hash.new
     @merchant_repository.all.each do |merchant|
@@ -82,12 +83,13 @@ class SalesAnalyst
       item.unit_price > (avg_avg_price + (std_dev * 2))
     end
   end
-  #The average invoices per merchant
+
   def average_invoices_per_merchant
     invoices = @invoice_repository.all.count.to_f
     merchants = @merchant_repository.all.count.to_f
     (invoices / merchants).round(2)
   end
+
   def invoices_per_merchant
     invoice_items = Hash.new
     invoice_count = 0
@@ -97,12 +99,14 @@ class SalesAnalyst
     end
     invoice_items
   end
+
   def average_invoices_per_merchant_standard_deviation
     mean = average_invoices_per_merchant
     sum = invoices_per_merchant.values.sum(0.0) {|item| (item - mean) ** 2}
     variance = (sum / (invoices_per_merchant.size - 1)).to_f
     standard_deviation = Math.sqrt(variance).round(2)
   end
+
   def top_merchants_by_invoice_count
     top_merchants = []
     avg_invoices = average_invoices_per_merchant
@@ -113,6 +117,7 @@ class SalesAnalyst
     end
     top_merchants
   end
+
   def bottom_merchants_by_invoice_count
     bottom_merchants = []
     avg_invoices = average_invoices_per_merchant
@@ -123,6 +128,7 @@ class SalesAnalyst
     end
     bottom_merchants
   end
+
   def invoices_by_weekday
     inv_count = {"Sunday" => 0, "Monday" => 0, "Tuesday" => 0, "Wednesday" => 0, "Thursday" => 0, "Friday" => 0, "Saturday" => 0 }
     @invoice_repository.all.each do |invoice|
@@ -130,15 +136,18 @@ class SalesAnalyst
     end
     inv_count
   end
+
   def invoice_per_day_of_week_standard_deviation
     mean = avg_invoices_per_day_of_week
     sum = invoices_by_weekday.values.sum(0.0) {|day| (day - mean) ** 2}
     variance = (sum / (invoices_by_weekday.size - 1)).to_f
     standard_deviation = Math.sqrt(variance).round(2)
   end
+
   def avg_invoices_per_day_of_week
     (@invoice_repository.all.count / 7.0).round(2)
   end
+
   def top_days_by_invoice_count
     inv_count = invoices_by_weekday
     avg_invoices = avg_invoices_per_day_of_week
@@ -151,16 +160,19 @@ class SalesAnalyst
     end
     best_days
   end
+
   def invoice_status(status)
     status_count = @invoice_repository.find_all_by_status(status)
     ((status_count.size.to_f / @invoice_repository.all.size.to_f)* 100).round(2)
   end
+
   def invoice_paid_in_full?(invoice_id)
     transactions = @transaction_repository.find_all_by_invoice_id(invoice_id)
     status = []
     transactions.map  { |t| status << t.result }
     status.include?('success')
   end
+  
   def invoice_total(id)
     inv_items = @invoice_item_repository.find_all_by_invoice_id(id)
     total = 0

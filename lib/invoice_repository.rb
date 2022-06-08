@@ -5,6 +5,7 @@ require_relative 'repoable'
 class InvoiceRepository
   include Repoable
   attr_reader :file_path
+
   attr_accessor :all
 
   def initialize(file_path)
@@ -44,5 +45,13 @@ class InvoiceRepository
   def update(id, status)
     find_by_id(id).status = status
     find_by_id(id).updated_at = Time.now
+  end
+
+  def delete(id)
+    @all.delete(find_by_id(id))
+  end
+
+  def inspect
+    "#<#{self.class} #{@all.size} rows>"
   end
 end

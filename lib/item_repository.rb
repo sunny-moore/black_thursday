@@ -1,4 +1,3 @@
-require 'pry'
 require 'CSV'
 require_relative '../lib/item'
 require_relative 'repoable'
@@ -50,11 +49,11 @@ class ItemRepository
                       :merchant_id => data_hash[:merchant_id]
                       })
   end
+  
   def update(id, attributes)
     find_by_id(id).name = attributes[:name]
     find_by_id(id).description = attributes[:description]
     find_by_id(id).unit_price = BigDecimal(attributes[:unit_price])
     find_by_id(id).updated_at = Time.now
-    # binding.pry
   end
 end
